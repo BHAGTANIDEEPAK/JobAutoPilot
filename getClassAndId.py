@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
-web_address = str(input("Enter the URL: "))
+web_address = input("Enter the URL: ")
 
 # request server to get access
 path = requests.get(web_address)
@@ -31,4 +31,4 @@ for tag in soup.find_all(True):  # True gets all tags
         })
 
 df = pd.DataFrame(data)
-df.to_csv('output.csv')
+df.to_csv('classAndIdTable.csv')
